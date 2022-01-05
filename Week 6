@@ -1,0 +1,120 @@
+1) Abstract class
+import java.util.Scanner;
+abstract class Shape
+{
+     int a,b;
+     abstract void printArea(int a,int b);
+}
+class Rectangle extends Shape
+{
+      public void printArea(int a,int b)
+      {
+           System.out.println("Area of rectangle is"+(a*b));
+      }
+}
+class Triangle extends Shape
+{
+      public void printArea(int a,int b)
+      {
+           System.out.println("Area of triangle is"+(0.5*a*b));
+      }
+}
+class Circle extends Shape
+{
+      public void printArea(int a,int b)
+      {
+           System.out.println("Area of circle is"+(3.14*a*a));
+      }
+}
+
+public class shapedemo
+{
+     public static void main(String[] args)
+     {
+          Rectangle r = new Rectangle();
+          Triangle t = new Triangle();
+          Circle c = new Circle();
+          r.printArea(10,20);
+          t.printArea(10,20);
+          c.printArea(10,20);
+     }
+}
+
+output:
+Area of rectangle is200
+Area of triangle is100.0
+Area of circle is314.0
+
+
+2) Interfaces
+import java.util.*;
+interface students
+{
+      void getvalue();
+}
+interface Department
+{
+      void getattendense();
+}
+class exam implements students,Department
+{
+      int sno,attendense,c;
+      String name;
+      Scanner input = new Scanner(System.in);
+      public void getvalue()
+      {
+            System.out.println("enter sno:");
+            sno=input.nextInt();
+            System.out.println("enter name of the student:");
+            name=input.next();
+            System.out.println("enter class of the student:");
+            c =input.nextInt();
+      }
+      public void getattendense()
+      {
+            System.out.println("enter sno:");
+            sno=input.nextInt();
+            System.out.println("enter attendense of the student:");
+            attendense=input.nextInt();
+      }
+      void calattendense()
+      {
+             System.out.println("the attendense of the student is "+attendense+"%");
+      }
+      void booleligible()
+      {
+              if (attendense <80)
+              {
+                   System.out.println("false");
+              }
+              else
+              {
+                   System.out.println("true");
+              }
+      }
+}
+class shapedemo
+{
+      public static void main(String args[])
+      {
+          exam o=new exam();
+          o.getvalue();
+          o.getattendense();
+          o.calattendense();
+          o.booleligible();
+      }
+}
+
+output:
+enter sno:
+12
+enter name of the student:
+abc
+enter class of the student:
+408
+enter sno:
+24
+enter attendense of the student:
+98
+the attendense of the student is 98%
+true
