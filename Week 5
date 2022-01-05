@@ -1,0 +1,98 @@
+1)Method overloading
+class room
+{
+    int l;
+    int b;
+    public void area()
+    {
+        System.out.println("When no parameter is passed in method");
+        System.out.println("------------");
+    }
+    public void area(int a)
+    {
+        System.out.println("When 1 parameter is passed in method");
+        System.out.println("Area of room is"+(a*a));
+    }
+    public void area(int a,int b)
+    {
+        System.out.println("When 2 parameter is passed in method");
+        System.out.println("Area of rectangle is"+(a*b));
+    }
+}
+public class roomdemo
+{
+    public static void main(String[] args)
+    {
+        room r = new room();
+        r.area();
+        r.area(10);
+        r.area(10,20);
+    }
+}
+
+output:
+When no parameter is passed in method
+----------------
+When 1 parameter is passed in method
+Area of room is100
+When 2 parameter is passed in method
+Area of rectangle is200
+
+
+2) Method overridding
+import java.util.Scanner;
+class figure
+{
+     float l,b;
+     Scanner input = new Scanner(System.in);
+     public void read()
+     {
+     System.out.println("Enter the dimensions");
+     l = input.nextFloat();
+     b = input.nextFloat();
+     }
+     public void area()
+     {
+         System.out.println("invalid");
+     }
+}
+class rectangle extends figure 
+{
+     public void area()
+     {
+         System.out.println("Area of Rectangle is:"+(l*b));
+     }
+}
+class triangle extends figure 
+{
+     public void area()
+     {
+         System.out.println("Area of triangle is:"+(0.5*l*b));
+     }
+}
+
+public class example
+{
+public static void main(String args[])
+{
+     triangle t = new triangle();
+     rectangle r = new rectangle();
+     r.read();
+     r.area();
+     t.read();
+     t.area();
+}
+}
+
+output:
+Enter the dimensions
+10
+20
+Area of Rectangle is:200.0
+Enter the dimensions
+10
+10
+Area of triangle is:50.0
+
+
+3) Final keyword
