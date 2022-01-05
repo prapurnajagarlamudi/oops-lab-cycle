@@ -1,0 +1,102 @@
+1)class stat
+{
+static int a=1;
+static int b=2;
+int c=3;
+int d=4;
+      static
+      {
+           System.out.println("The static block is initilized");
+      }
+      static void method1()
+      {
+            System.out.println("This is static method");
+            System.out.println("a="+a);
+            System.out.println("b="+b);
+      }
+      void method2()
+      {
+          System.out.println("This is non static method");
+          System.out.println("c="+c);
+          System.out.println("d="+d);
+      }
+}
+class statdemo
+{
+    public static void main (String[] args)
+    {
+        stat s=new stat();
+        stat.method1();
+        s.method2();
+    }
+}
+
+output:
+The static block is initilized
+This is static method
+a=1
+b=2
+This is non static method
+c=3
+d=4
+
+
+2)
+import java.util.Scanner;
+class with_this
+{
+int n1,n2,sum;
+    void getinfo(int n1,int n2)
+    {
+          this.n1=n1;
+          this.n2=n2;
+    }
+    void summation()
+    {
+          sum=n1+n2;
+          System.out.println("sum is:"+sum);
+    }
+}
+class Example2
+{
+        public static void main(String args[])
+        {
+              int n1,n2;
+              Scanner input=new Scanner(System.in);
+              System.out.println("enter two numbers:");
+              n1=input.nextInt();
+              n2=input.nextInt();
+              with_this obj=new with_this();
+              obj.getinfo(n1,n2);
+              obj.summation();
+        }
+}
+
+output:
+enter two numbers:
+10
+20
+sum is:30
+
+
+3)
+class variable
+{
+    void arguments(int str)
+    {
+    System.out.println("the no.of arguments are:"+str.length);
+    System.out.println("the arguments are:");
+    for(int i:str)
+    {
+        System.out.println(i);
+    }
+}
+class length
+{
+    public static void main(String args[])
+    {
+        arguments(1,2,3)
+        arguments()
+        arguments(1)
+    }
+}
