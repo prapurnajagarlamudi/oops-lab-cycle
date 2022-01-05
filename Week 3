@@ -1,0 +1,75 @@
+1) Innerclasses
+
+public class Outer()
+{
+    int outer_x=5;
+    public void test()
+    {
+        inner_class i = new inner_class();
+        i.display();
+    }
+    public class Inner_class()
+    {
+        public void display()
+        {
+            System.out.println("The outer_x is:"+outer_x);  
+        }
+    }
+}
+
+public class innerclassdemo ()
+{
+    public static void main (String args[])
+    {
+        outer_class o = new outer_class();
+        o.test();
+    }
+}
+
+output:
+The outer_x is:5
+
+2) constructor overloading
+class example
+{
+    int hr;
+    int min;
+    int sec;
+    example(int hr)
+    {
+        this.hr=hr;
+    }
+    example(int hr,int min)
+    {
+        this.hr=hr;
+        this.min=min;
+    }
+    example(int hr,int min,int sec)
+    {
+        this.hr=hr;
+        this.min=min;
+        this.sec=sec;
+    }
+    void display()
+    {
+        System.out.println(hr+":"+min+":"+sec);
+    }
+}
+
+public class Main
+{
+    public static void main (String[] args)
+    {
+        example e1 = new example(10);
+        example e2 = new example(10,20);
+        example e3 = new example(10,20,30);
+        e1.display();
+        e2.display();
+        e3.display();
+    }
+}
+
+Output:
+10:0:0
+10:20:0
+10:20:30
