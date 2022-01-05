@@ -1,0 +1,259 @@
+1)
+import java.util.Scanner;
+class employee
+{
+    String name;
+    int id;
+    String destination;
+    Scanner input = new Scanner(System.in);
+    public void reademp()
+    {
+         System.out.println("Enter the name");
+         name = input.next();
+         System.out.println("Enter the id");
+         id = input.nextInt();
+         System.out.println("Enter the destination");
+         destination = input.next();
+    }
+}
+class salary extends employee
+{
+   int bp,hra,da,pf,np;
+   public void readsalary()
+   {
+        System.out.println("Enter bp");    
+        bp = input.nextInt();
+        System.out.println("Enter hra");
+        hra = input.nextInt();
+        System.out.println("Enter da");  
+        da = input.nextInt();
+        System.out.println("Enter pf");    
+        pf = input.nextInt();
+  }
+public int caluclatesalary()
+    {
+       np = bp + hra + da - pf;
+       return np;
+    }
+}
+public class inher1
+{
+   public static void main(String[] args)
+   { 
+       int n;
+       Scanner input = new Scanner(System.in);
+       System.out.println("Enter the number of employees");
+       n = input.nextInt();  
+       salary [] obj = new salary[n];
+       for(int i=0;i<n;i++)
+       {
+            obj[i]=new salary();
+            obj[i].reademp();
+            obj[i].readsalary();
+            int result = obj[i].caluclatesalary();
+            System.out.println("The net salary is"+result);
+       }
+   }
+}
+
+output:
+Enter the number of employees
+2
+Enter the name
+prapurna
+Enter the id
+145
+Enter the destination
+CSE
+Enter bp
+1000
+Enter hra
+1000
+Enter da
+1000
+Enter pf
+1000
+The net salary is2000
+Enter the name
+Madhavi
+Enter the id
+134
+Enter the destination
+CSE
+Enter bp
+2000
+Enter hra
+2000
+Enter da
+2000
+Enter pf
+2000
+The net salary is4000
+
+
+2)
+import java.util.Scanner;
+class student
+{
+      String name;
+      int roll_no;
+      public void readstude()
+      {
+          Scanner input = new Scanner(System.in);
+          System.out.println("Enter the name");
+          name = input.next();
+          System.out.println("Enter the rollno");
+          roll_no = input.nextInt();
+      }
+}
+class test extends student
+{
+     int res=0;
+     Scanner input = new Scanner(System.in);
+     int i;
+     int[] marks = new int[6];
+     public void readmarks()
+     {
+         System.out.println("Enter the marks");
+         for (i = 0; i < marks.length; i++)
+         {
+            marks[i] = input.nextInt();
+         }
+     }
+}
+class result extends test
+{
+      public void caluclate()
+      {
+          for(i=0;i<6;i++)
+          {
+              res=res+marks[i];
+          }
+      }
+      public void display()
+      {
+          System.out.println("The total marks are:"+(res/marks.length));
+      }
+} 
+public class inher2
+{
+public static void main(String[] args)
+{
+     int n;
+     Scanner input = new Scanner(System.in);
+     System.out.println("Enter the number of students");
+     n = input.nextInt();  
+
+     result [] obj = new result[n];
+
+     for(int i=0;i<n;i++)
+     {
+     obj[i]=new result();
+     obj[i].readstude();
+     obj[i].readmarks();
+     obj[i].caluclate();
+     obj[i].display();
+     }
+}
+}     
+
+output:
+Enter the number of students
+2
+Enter the name
+prapurna
+Enter the rollno
+145
+Enter the marks
+100
+98
+98
+98
+100
+100
+The total marks are:99
+Enter the name
+madhavi
+Enter the rollno
+134
+Enter the marks
+100
+99
+98
+97
+100
+99
+The total marks are:98
+
+
+3)
+class employee
+{
+     String name;
+     int id;
+     double salary;
+     Scanner input = new Scanner(System.in);
+     public void read_emp()
+     {
+         System.out.println("Enter name");
+         name = input.next();
+         System.out.println("Enter id");
+         id = input.nextInt();
+         System.out.println("Enter salary");
+         salary = input.nextDouble();
+     }
+}
+class permanent_employee extends employee
+{
+      public void print_emp()
+      {
+           System.out.println("name is:"+name);
+           System.out.println("id is:"+id);
+           salary=salary+salary*0.035;
+           System.out.println("salary is:"+salary);
+      }
+}
+class temporary_employee extends employee
+{
+      public void print_emp()
+      {
+           System.out.println("name is:"+name);
+           System.out.println("id is:"+id);
+           salary=salary+salary*0.05;
+           System.out.println("salary is:"+salary);
+      }
+}
+public class inher3
+{
+public static void main (String[] args)
+{
+     Scanner input = new Scanner(System.in);
+     System.out.println("Enter permanent employee or temporary employee");
+     String s = input.next();
+     if(s=="per")
+     {
+          permanent_employee p = new permanent_employee();
+          p.read_emp();
+          p.print_emp();
+     }
+     else
+     {
+          temporary_employee t = new temporary_employee();
+          t.read_emp();
+          t.print_emp();
+     }
+   }
+ }
+ 
+output:
+Enter permanent employee or temporary employee
+per
+Enter name
+prapurna
+Enter id
+145
+Enter salary
+1000000
+name is:prapurna
+id is:145
+salary is:1050000.0
