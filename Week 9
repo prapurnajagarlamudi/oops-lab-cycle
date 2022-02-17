@@ -1,0 +1,37 @@
+Write a JAVA program for example of try and catch block. In this check whether the given array size is negative or not.
+DESCRIPTION: Program explains exceptions using try and catch block. In the try block array is created. Check the array size is negative or not. If the array size is positive then it will be display array size otherwise, it throws an error like java.lang.NegativeArraySizeException
+
+import java.lang.*;
+import java.util.Scanner;
+
+public class Negativetest
+{
+     public static void main(String args[])
+     {
+          Scanner input = new Scanner(System.in);
+          System.out.println("Enter the size of an array");
+          int n = input.nextInt();
+          try
+          {
+               int arr[]=new int[n];
+               if(n>0)
+               {
+                     System.out.println("Array size is positive:"+n);
+               }
+          }catch(NegativeArraySizeException e) {
+                     System.out.println("Array size is negative:"+n);
+                     System.out.println(e);
+          }
+     }
+}
+
+output:
+
+Enter the size of an array
+-2
+Array size is negative:-2
+java.lang.NegativeArraySizeException
+
+Enter the size of an array
+10
+Array size is positive:10
