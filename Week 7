@@ -1,0 +1,102 @@
+7)a)String class Methods
+import java.util.Scanner;
+import java.lang.String;
+
+public class StringMethods
+{
+       public static void main(String[] args)
+       {
+              Scanner input = new Scanner(System.in);
+              System.out.println("Enter the string");
+              String s = input.nextLine();
+              System.out.println(s.substring(1)); 
+              System.out.println(s.substring(1,5));  
+
+              System.out.println(s.replace('h','w'));
+              System.out.println(s.replace("hello","world"));
+
+              System.out.println(s.concat("java"));
+
+              System.out.println(s.contains("hello"));   
+              System.out.println(s.equals("helloworld"));  
+              System.out.println(s.equalsIgnoreCase("HELLOWORLD"));   
+              System.out.println(s.compareTo("helloworld")); 
+
+              System.out.println(s.length());
+
+              System.out.println(s.isEmpty()); 
+
+       }
+}
+
+output:
+
+Enter the String:
+helloworld
+elloworld
+ello
+welloworld
+worldworld
+helloworldjava
+true
+true
+true
+0
+10
+false
+
+
+
+7)b)StringBuffer class Methods
+import java.lang.*;
+import java.util.Scanner;
+import java.lang.StringBuffer;
+
+public class StringBufferMethods 
+{
+     public static void main(String[] args)
+     {
+           //StringBuffer Class append() Method
+           Scanner input = new Scanner(System.in);
+           String s = input.nextLine();
+           StringBuffer sb1=new StringBuffer(s);
+           sb1.append("World");
+           System.out.println(sb1);
+
+           //StringBuffer insert() Method
+           StringBuffer sb2=new StringBuffer(s);
+           sb2.insert(2,"World");
+           System.out.println(sb2);
+   
+           //StringBuffer replace() Method
+           StringBuffer sb3=new StringBuffer(s);
+           sb3.replace(1,4,"World");
+           System.out.println(sb3);
+
+           //StringBuffer delete() Method
+           StringBuffer sb4=new StringBuffer(s);
+           sb4.delete(1,4);
+           System.out.println(sb4);
+ 
+           //StringBuffer reverse() Method
+           StringBuffer sb5 =new StringBuffer(s);
+           sb5.reverse();
+           System.out.println(sb5);
+           
+           //StringBuffer capacity() Method
+           StringBuffer sb6=new StringBuffer(s);
+           System.out.println(sb6.capacity());
+
+     }
+}
+
+output:
+
+Enter the String:
+Hello
+HelloWorld
+HeWorldllo
+HWorldo
+Ho
+olleH
+21
