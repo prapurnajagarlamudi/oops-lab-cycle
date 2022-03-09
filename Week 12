@@ -1,0 +1,101 @@
+a)•	Write a java program for handling mouse events.
+import java.awt.*;
+import java.awt.event.*;
+import java.applet.*;
+public class MouseTest extends Applet implements MouseListener,MouseMotionListener
+{
+public void init()
+{
+	addMouseListener(this);
+	addMouseMotionListener(this);
+}
+public void mouseClicked(MouseEvent e)
+{
+	showStatus("mouse clicked at"+e.getX()+","+e.getY());
+}
+public void mouseEntered(MouseEvent e)
+{
+        showStatus("mouse entered at"+e.getX()+","+e.getY());
+}
+public void mousePressed(MouseEvent e)
+{
+	showStatus("mouse pressed at"+e.getX()+","+e.getY());
+}
+public void mouseReleased(MouseEvent e)
+{
+	showStatus("mouse released at"+e.getX()+","+e.getY());
+}
+public void mouseExited(MouseEvent e)
+{
+	showStatus("mouse exited at"+e.getX()+","+e.getY());
+}
+public void mouseDragged(MouseEvent e)
+{
+	showStatus("mouse dragged at"+e.getX()+","+e.getY());
+}
+public void mouseMoved(MouseEvent e)
+{
+	showStatus("mouse moved at"+e.getX()+","+e.getY());
+}
+}
+
+
+//html file
+<html>
+<head>
+<title>
+Mouse Listener
+</title>
+</head>
+<body>
+<applet code="MouseTest.class"
+width="100"
+height="100">
+</applet>
+</body>
+</html>
+
+
+•	Write a java program for handling key events.
+import java.awt.*;
+import java.awt.event.*;
+import java.applet.*;
+public class KeyTest extends Applet implements KeyListener
+{
+        public void init()
+        {
+              Label l=new Label("enter character");
+              add(l);
+              TextField tf=new TextField(10);
+              tf.addKeyListener(this);
+              add(tf);
+        }
+        public void keyPressed(KeyEvent e)
+        {
+
+        }
+        public void keyReleased(KeyEvent e)
+        {
+
+        }
+        public void keyTyped(KeyEvent e)
+        {
+                showStatus("recently"+e.getKeyChar());
+        }
+}
+
+html code:
+
+<html>
+<head>
+<title>
+KeyListener
+</title>
+</head>
+<body>
+<applet code="KeyTest.class"
+width="100"
+height="100">
+</applet>
+</body>
+</html>
